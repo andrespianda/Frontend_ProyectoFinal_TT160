@@ -29,5 +29,5 @@ el backend se encuentra en : https://github.com/andrespianda/API_ProyectoFinal_T
 
 ### 1️⃣ Clonar el repositorio
 ```bash
-git clone https://github.com/usuario/proyecto-resolucion247.git
-cd proyecto-resolucion247
+git clone https://github.com/andrespianda/Frontend_ProyectoFinal_TT160.git
+cd Frontend_ProyectoFinal_TT160
