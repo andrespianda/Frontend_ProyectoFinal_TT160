@@ -21,7 +21,7 @@ Este sistema incluye:
 - Vite  
 
 ### 📌 Backend
-*(Adaptar según tu implementación — por ejemplo Node.js + Express + SQL Server)*
+el backend se encuentra en : https://github.com/andrespianda/API_ProyectoFinal_TT160 
 
 ---
 
