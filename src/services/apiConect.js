@@ -24,20 +24,29 @@ export async function postRegistros(name) {
     
 }
 
- export async function actualizarRegistro (registro){
-    console.log(registro)
-          try {
-            const id = registro._id
-        const response = await fetch(`${API_URL}/actualizar/${id}`,{
-          method: 'POST',
-          body: JSON.stringify(registro),
-          headers:{'content-type': 'application/json'},
-        })
-       
-        console.log(response)
+ export async function actualizarRegistro(registro) {
+  try {
+    console.log(registro);
 
-        } catch (error) {
-          console.error("Error:", error);
-          return error;
-        } 
+    const id = registro._id;
+
+    const response = await fetch(`${API_URL}/actualizar/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(registro),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error HTTP: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Paciente actualizado:", data);
+
+    return data;
+    
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
   }
+}

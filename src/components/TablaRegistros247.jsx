@@ -2,23 +2,37 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getRegistros } from "../services/apiConect";
-import { variables2 } from "../services/nomVariables";
 import { nomEncabezadosTabla } from "../services/nomEncabezadosTabla";
+import { Link, useNavigate } from "react-router-dom";
 
-function TablaRegistros247() {
 
+function TablaRegistros247({validador}) {
+
+
+    const navigate = useNavigate()  
     const[registros, setRegistros] = useState([]);
+    
  
     const fetchRegistros = async ()=>{
         const data = await getRegistros()
-        setRegistros(data);
-    console.log(variables2)
-    } 
+        let dataInicial
 
+        !validador ?  dataInicial = data.filter((registro) => registro.modificacion != "X"): dataInicial = data.filter((registro) => registro.modificacion === "X");
+        setRegistros(dataInicial);
+    
+    } 
 
     useEffect(() => {
     fetchRegistros();
     }, []);
+
+    const pacienteCancer = (registroCa) =>{
+      
+      navigate("/formulario", {
+      state: { datoCa: registroCa }
+    });
+      
+    }
 
 
   return (
@@ -55,12 +69,15 @@ function TablaRegistros247() {
                 </td>
                 <td className="px-2 py-1">{registro.nombreNeoplasiaMaligna}</td>
                 <td className="flex justify-center px-1 py-1">
-                  <button
+              
+                  <button 
                     type="button"
                     className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-1  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    onClick={() => pacienteCancer(registro)}                    
                   >
                     Validar
                   </button>
+                  
                 </td>
 
                 {/* {variables2.map((variable, idx) => (
