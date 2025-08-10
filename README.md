@@ -1,12 +1,33 @@
-# React + Vite
+# 📊 Proyecto Resolución 247 de 2016 - Cuenta de Alto Costo (CAC)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto implementa un sistema para la captura, almacenamiento y gestión de la información sobre los casos de cáncer en Colombia, conforme a la **Resolución 247 de 2016** de la Cuenta de Alto Costo (CAC).
 
-Currently, two official plugins are available:
+## 📋 Descripción
+La Resolución 247 de 2016 establece la estructura y variables obligatorias que las EPS y demás entidades deben reportar para la vigilancia de cáncer en Colombia.  
+Este sistema incluye:
+- 📝 Formulario completo de registro de pacientes.
+- 💾 Almacenamiento en base de datos.
+- 📤 Funciones de exportación/importación.
+- 📑 Validaciones según la norma.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+### 📌 Frontend
+- React  
+- React DOM  
+- React Router DOM  
+- Tailwind CSS  
+- @tailwindcss/vite  
+- Vite  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📌 Backend
+*(Adaptar según tu implementación — por ejemplo Node.js + Express + SQL Server)*
+
+---
+
+## 📦 Instalación
+
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/usuario/proyecto-resolucion247.git
+cd proyecto-resolucion247
