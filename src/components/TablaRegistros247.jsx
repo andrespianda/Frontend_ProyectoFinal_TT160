@@ -6,7 +6,7 @@ import { nomEncabezadosTabla } from "../services/nomEncabezadosTabla";
 import { Link, useNavigate } from "react-router-dom";
 
 
-function TablaRegistros247({validador}) {
+function TablaRegistros247({validador, tipoBtn,txtBtn}) {
 
 
     const navigate = useNavigate()  
@@ -37,9 +37,9 @@ function TablaRegistros247({validador}) {
 
   return (
     <>
-      <div class="relative overflow-x-auto">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-3 ">
-          <thead class="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className="relative overflow-x-auto">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-3 ">
+          <thead className="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               {nomEncabezadosTabla.map((variable, index) => (
                 <th key={index} scope="col" className="items-center px-2 py-1">
@@ -72,35 +72,22 @@ function TablaRegistros247({validador}) {
               
                   <button 
                     type="button"
-                    className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-1  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    className={`focus:outline-none text-gray-200 bg-${tipoBtn}-800 hover:bg-${tipoBtn}-900 focus:ring-4 focus:ring-${tipoBtn}-400 font-medium rounded-lg text-sm px-4 py-1  dark:bg-${tipoBtn}-700 dark:hover:bg-${tipoBtn}-800 dark:focus:ring-${tipoBtn}-900 cursor-pointer`}
                     onClick={() => pacienteCancer(registro)}                    
                   >
-                    Validar
+                    {txtBtn}
                   </button>
-                  
+                  {/* <button 
+                    type="button"
+                    className="focus:outline-none text-gray-200 bg-green-800 hover:bg-green-900 focus:ring-4 focus:ring-green-400 font-medium rounded-lg text-sm px-4 py-1  dark:bg-green-700 dark:hover:bg-green-800 dark:focus:ring-green-900 cursor-pointer"
+                                      
+                  >
+                    pruebas
+                  </button>               */}
                 </td>
-
-                {/* {variables2.map((variable, idx) => (
-                        <td key={idx} className="px-2 py-1">
-                            {registro[variable]}
-                        </td>
-                    ))} */}
               </tr>
             ))}
-            {/* <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-            </tr> */}
+
           </tbody>
         </table>
       </div>
