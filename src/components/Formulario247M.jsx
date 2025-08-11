@@ -5,10 +5,9 @@ import { actualizarRegistro } from "../services/apiConect";
 function Formulario247M() {
   const location = useLocation();
   const { datoCa } = location.state || {};
-  //const [formData, setFormData] = useState({});
   const [temporal, setTemporal] = useState({});
-    const modalRef = useRef(null);
-    const navigate = useNavigate();
+  const modalRef = useRef(null);
+  const navigate = useNavigate();
 
   const abrirModal = () => {
     modalRef.current.showModal();
@@ -16,9 +15,7 @@ function Formulario247M() {
 
   const cerrarModal = () => {
     modalRef.current.close();
-  };
-
-  //const [initialized, setInitialized] = useState(false);
+  }; 
 
   useEffect(() => {
     if (datoCa) setTemporal(datoCa);
@@ -43,8 +40,6 @@ function Formulario247M() {
 
     setTemporal(nuevosDatos);
     abrirModal()
-    // datoModificado(nuevosDatos);
-    // navigate(-1);
   };
 
   return (
@@ -76,25 +71,19 @@ function Formulario247M() {
                 name="primerNombreUsuario"
                 defaultValue={datoCa.primerNombreUsuario}
               />
-              {/* <label name="segundoNombreUsuario">
-                {temporal.segundoNombreUsuario}
-              </label> */}
+             
               <input
                 type="hidden"
                 name="segundoNombreUsuario"
                 defaultValue={temporal.segundoNombreUsuario}
               />
-              {/* <label name="primerApellidoUsuario">
-                {datoCa.primerApellidoUsuario}
-              </label> */}
+             
               <input
                 type="hidden"
                 name="primerApellidoUsuario"
                 defaultValue={temporal.primerApellidoUsuario}
               />
-              {/* <label name="segundoApellidoUsuario">
-                {datoCa.segundoApellidoUsuario}
-              </label> */}
+             
               <input
                 type="hidden"
                 name="segundoApellidoUsuario"
@@ -115,9 +104,7 @@ function Formulario247M() {
                 name="tipoIdentificacionUsuario"
                 defaultValue={temporal.tipoIdentificacionUsuario}
               />
-              {/* <label name="numeroIdentificacionUsuario">
-                {datoCa.numeroIdentificacionUsuario}
-              </label> */}
+             
               <input
                 type="hidden"
                 name="numeroIdentificacionUsuario"
