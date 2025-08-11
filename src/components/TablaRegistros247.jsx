@@ -77,13 +77,18 @@ function TablaRegistros247({validador, tipoBtn,txtBtn}) {
                   >
                     {txtBtn}
                   </button>
-                  {/* <button 
+                  <button 
+                    type="button"
+                    className="focus:outline-none text-gray-200 bg-cyan-800 hover:bg-cyan-900 focus:ring-4 focus:ring-cyan-400 font-medium rounded-lg text-sm px-4 py-1  dark:bg-cyan-700 dark:hover:bg-cyan-800 dark:focus:ring-cyan-900 cursor-pointer"
+                    hidden
+                   >
+                    </button>   
+                                      <button 
                     type="button"
                     className="focus:outline-none text-gray-200 bg-green-800 hover:bg-green-900 focus:ring-4 focus:ring-green-400 font-medium rounded-lg text-sm px-4 py-1  dark:bg-green-700 dark:hover:bg-green-800 dark:focus:ring-green-900 cursor-pointer"
-                                      
-                  >
-                    pruebas
-                  </button>               */}
+                    hidden
+                   >
+                    </button>              
                 </td>
               </tr>
             ))}
